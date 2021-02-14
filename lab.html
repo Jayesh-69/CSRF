@@ -16,7 +16,7 @@
                   {method:'GET',credentials:'include',mode:'no-cors'}
                  ).catch(err => {
                         console.log("ERR"+val);
-            }).than(response => {
+            }).then(response => {
                 z=performance.now();
                 if (z-v < 3000){
                     document.write("<br/>INVALID"+val+(z-v).toString());
